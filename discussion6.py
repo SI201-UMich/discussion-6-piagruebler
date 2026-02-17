@@ -72,7 +72,7 @@ class HorseRaces:
                 horse_races[header[i+1]] = float(row[i+1])
             
             # add the horse's time sot the dictionary
-            race_dict[horse_name] = horses_races
+            race_dict[horse_name] = horse_races
 
         #print(race_dict)
         return race_dict
