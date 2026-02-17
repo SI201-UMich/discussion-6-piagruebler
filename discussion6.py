@@ -97,7 +97,9 @@ class HorseRaces:
         fastest_race = None
         fastest_time = 999.9
 
+        ''''
         race_dict = self.race_dict
+        my attempt
         if race_dict.get(horse, False):
             dict_times = race_dict[horse]
             for race in dict_times:
@@ -106,6 +108,19 @@ class HorseRaces:
                         fastest_time = time
                         fastest_race = race
         return (fastest_race, fastest_time) 
+        '''
+        #make sure that horse exists
+        if horse not in self.race_dict:
+            return fastest_race, fastest_time
+        
+        #get the list of races of that horse as a dictionary
+        horse_races = self.race_dict[horse]
+        for race, time in horse_races.items():
+            if time < fastest_time:
+                fastest_race = race
+                fastest_time = time
+        return fastest_race, fastest_time
+
 
 
 
